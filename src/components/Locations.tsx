@@ -38,6 +38,13 @@ const Locations = () => {
       image: location5,
       features: ["Yoga Studio", "Pilates", "Community Events"],
     },
+    {
+      name: "Coming Soon",
+      address: "New location opening in Calgary",
+      image: location1,
+      features: ["Stay Tuned", "Premium Facility", "Grand Opening"],
+      isComingSoon: true,
+    },
   ];
 
   return (
@@ -71,6 +78,13 @@ const Locations = () => {
                   className="h-full w-full object-cover transition-smooth group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                {location.isComingSoon && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                    <span className="rounded-full bg-gradient-gold px-6 py-2 text-lg font-bold text-primary">
+                      Coming Soon
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Content */}
@@ -96,9 +110,11 @@ const Locations = () => {
                   ))}
                 </div>
 
-                <Button variant="location" className="w-full group/btn">
-                  Explore Location
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                <Button variant="location" className="w-full group/btn" disabled={location.isComingSoon}>
+                  {location.isComingSoon ? "Stay Tuned" : "Explore Location"}
+                  {!location.isComingSoon && (
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                  )}
                 </Button>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import Story from "@/components/Story";
 import Locations from "@/components/Locations";
-import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -10,7 +9,6 @@ const Index = () => {
       <Hero />
       <Story />
       <Locations />
-      <Experience />
       <Footer />
     </main>
   );

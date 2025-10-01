@@ -25,15 +25,15 @@ const Story = () => {
   ];
 
   return (
-    <section id="story" className="bg-ivory py-24 px-4">
+    <section id="story" className="bg-secondary py-24 px-4">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-5xl font-bold text-primary md:text-6xl">
+          <h2 className="mb-4 text-5xl font-bold text-gold md:text-6xl">
             Our Story
           </h2>
           <div className="mx-auto h-1 w-24 bg-gradient-gold" />
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-ivory">
             From Venice Beach to Calgary, a legacy of strength, dedication, and community 
             spanning nearly six decades.
           </p>
@@ -72,10 +72,10 @@ const Story = () => {
                     <span className="inline-block rounded-full bg-gradient-gold px-4 py-1 text-sm font-semibold text-primary">
                       {milestone.year}
                     </span>
-                    <h3 className="mt-4 text-2xl font-bold text-primary">
+                    <h3 className="mt-4 text-2xl font-bold text-foreground">
                       {milestone.title}
                     </h3>
-                    <p className="mt-3 text-muted-foreground">
+                    <p className="mt-3 text-foreground/80">
                       {milestone.description}
                     </p>
                   </div>
