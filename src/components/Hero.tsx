@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-gym.jpg";
+import logo from "@/assets/logo_GoldsGym.png";
 
 const Hero = () => {
   return (
@@ -18,14 +19,15 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         <div className="max-w-4xl animate-fade-in-up space-y-6">
-          <h1 className="text-6xl font-bold tracking-tight text-primary-foreground md:text-7xl lg:text-8xl">
+          {/*<img src={logo}></img>*/}
+          <h1 className="text-6xl font-bold tracking-tight text-primary-foreground md:text-7xl lg:text-8xl text-gold">
             Gold's Gym Calgary
           </h1>
           
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-gold" />
-            <p className="font-serif text-2xl italic text-gold md:text-3xl">
-              Strength. History. Community.
+            <p className="font-serif text-2x1 italic text-gold md:text-3xl">
+              WHERE LEGENDS ARE MADE
             </p>
             <div className="h-px w-16 bg-gold" />
           </div>

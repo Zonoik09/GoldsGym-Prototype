@@ -82,28 +82,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Hours */}
-          <div>
-            <h4 className="mb-4 text-lg font-semibold text-gold">Hours</h4>
-            <ul className="space-y-2 text-sm text-ivory">
-              <li className="flex justify-between">
-                <span>Monday - Friday</span>
-                <span className="font-medium text-gold">5AM - 11PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Saturday</span>
-                <span className="font-medium text-gold">6AM - 10PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sunday</span>
-                <span className="font-medium text-gold">7AM - 9PM</span>
-              </li>
-              <li className="mt-4 text-xs text-gold-light">
-                * Hours may vary by location
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Bar */}

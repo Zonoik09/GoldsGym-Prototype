@@ -9,40 +9,40 @@ import location5 from "@/assets/location-5.jpg";
 const Locations = () => {
   const locations = [
     {
-      name: "Downtown Core",
-      address: "888 3rd Street SW, Calgary",
+      name: "GOLD'S GYM DOUGLASDALE",
+      address: "11540 24 St SE, Calgary, AB T2Z 3V9",
       image: location1,
       features: ["24/7 Access", "Premium Equipment", "Personal Training"],
     },
     {
-      name: "Beltline District",
-      address: "1234 17th Avenue SW, Calgary",
+      name: "GOLD'S GYM COUNTRY HILLS",
+      address: "2638 Country Hills Blvd NE, Calgary, AB T3N 1A3",
       image: location2,
-      features: ["Group Classes", "Spa Amenities", "Nutrition Coaching"],
+      features: ["24/7 Access", "Premium Equipment", "Personal Training"],
     },
     {
-      name: "Eau Claire",
-      address: "456 2nd Avenue SW, Calgary",
+      name: "GOLD'S GYM NORTHGATE",
+      address: "565 36 St NE, Calgary, AB T2A 6K3",
       image: location3,
-      features: ["Boutique Studio", "Private Sessions", "Recovery Lounge"],
+      features: ["24/7 Access", "Premium Equipment", "Personal Training"],
     },
     {
-      name: "Mission",
-      address: "789 4th Street SW, Calgary",
+      name: "GOLD's GYM BUFFALO RUN",
+      address: "131 - 11501 Buffalo Run Blvd, Calgary, AB T3T 0E3",
       image: location4,
-      features: ["Strength Training", "Cardio Zone", "Wellness Center"],
+      features: ["24/7 Access", "Premium Equipment", "Personal Training"],
     },
     {
-      name: "Kensington",
-      address: "321 10th Street NW, Calgary",
+      name: "GOLD's GYM VILLAGE SQUARE",
+      address: "2520 52 St NE Calgary, AB T1Y 3R5",
       image: location5,
-      features: ["Yoga Studio", "Pilates", "Community Events"],
+      features: ["24/7 Access", "Premium Equipment", "Personal Training"],
     },
     {
       name: "Coming Soon",
       address: "New location opening in Calgary",
       image: location1,
-      features: ["Stay Tuned", "Premium Facility", "Grand Opening"],
+      features: ["24/7 Access", "Premium Equipment", "Personal Training"],
       isComingSoon: true,
     },
   ];
@@ -52,8 +52,8 @@ const Locations = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-5xl font-bold text-primary-foreground md:text-6xl">
-            Our Locations
+          <h2 className="mb-4 text-5xl font-bold text-gold md:text-6xl">
+            Locations
           </h2>
           <div className="mx-auto h-1 w-24 bg-gradient-gold" />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-ivory">
@@ -67,7 +67,7 @@ const Locations = () => {
           {locations.map((location, index) => (
             <div
               key={location.name}
-              className="group overflow-hidden rounded-2xl bg-card shadow-elegant transition-smooth hover:-translate-y-2 hover:shadow-gold"
+              className="group overflow-hidden rounded-2xl bg-card shadow-elegant transition-smooth hover:-translate-y-2 hover:shadow-gold border"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
@@ -89,13 +89,13 @@ const Locations = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="mb-2 text-2xl font-bold text-primary">
+                <h3 className="mb-2 text-2xl font-bold text-gold">
                   {location.name}
                 </h3>
                 
                 <div className="mb-4 flex items-start gap-2 text-muted-foreground">
                   <MapPin className="mt-1 h-4 w-4 flex-shrink-0 text-gold" />
-                  <p className="text-sm">{location.address}</p>
+                  <p className="text-sx text-primary-foreground">{location.address}</p>
                 </div>
 
                 {/* Features */}
