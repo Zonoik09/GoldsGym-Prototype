@@ -20,9 +20,9 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         <div className="max-w-4xl animate-fade-in-up space-y-6">
-          {/*<img src={logo}></img>*/}
-          <h1 className="text-6xl font-bold tracking-tight text-primary-foreground md:text-7xl lg:text-8xl text-gold">
-            Gold's Gym Calgary
+          <img src={logo} className="w-32 h-auto mx-auto" />
+          <h1 className="font-serif text-6xl font-bold tracking-tight text-primary-foreground md:text-7xl lg:text-8xl text-white">
+            GOLD'S GYM CALGARY
           </h1>
           
           <div className="flex items-center justify-center gap-4">
@@ -33,10 +33,6 @@ const Hero = () => {
             <div className="h-px w-16 bg-gold" />
           </div>
 
-          <p className="mx-auto max-w-2xl text-lg text-ivory md:text-xl">
-            Experience legendary fitness in Calgary's most prestigious locations. 
-            Where heritage meets luxury, and community fuels greatness.
-          </p>
 
           <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:justify-center">
             <Button variant="hero" size="lg" className="group" data-cta="join-now">
