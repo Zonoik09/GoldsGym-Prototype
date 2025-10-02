@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         <div className="max-w-4xl animate-fade-in-up space-y-6">
           <img src={logo} className="w-32 h-auto mx-auto" />
-          <h1 className="font-serif text-6xl font-bold tracking-tight text-primary-foreground md:text-7xl lg:text-8xl text-white">
+          <h1 className="font-serif text-6xl font-bold tracking-wide text-primary-foreground md:text-7xl lg:text-8xl text-white">
             GOLD'S GYM CALGARY
           </h1>
           
@@ -46,7 +46,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
           <div className="flex flex-col items-center gap-2 text-ivory">
             <span className="text-sm font-light">Scroll to explore</span>
             <div className="h-8 w-px bg-gradient-to-b from-gold to-transparent" />
