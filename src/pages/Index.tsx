@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Story from "@/components/Story";
 import Locations from "@/components/Locations";
 import Footer from "@/components/Footer";
+import LocationMap from "@/components/MapSection";
 
 const Index = () => {
   return (
@@ -9,6 +10,7 @@ const Index = () => {
       <Hero />
       <Story />
       <Locations />
+      <LocationMap/>
       <Footer />
     </main>
   );
