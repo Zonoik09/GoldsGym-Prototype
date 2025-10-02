@@ -46,21 +46,14 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="flex flex-col items-center gap-2 text-ivory">
+            <span className="text-sm font-light">Scroll to explore</span>
+            <div className="h-8 w-px bg-gradient-to-b from-gold to-transparent" />
+          </div>
+        </div>
 
-      <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1.2, duration: 0.6 }}
-      className="absolute bottom-12 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2">
-      <span className="text-sm text-ivory/70">Scroll to explore</span>
-      <div className="h-12 w-px bg-gradient-to-b from-gold to-transparent" />
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <ChevronDown className="h-6 w-6 text-gold" />
-      </motion.div>
-    </motion.div>
+      
       </div>
     </section>
   );
