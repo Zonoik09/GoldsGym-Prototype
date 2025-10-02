@@ -2,7 +2,10 @@ import { MapPin, Phone, Mail, Instagram, Facebook, Twitter } from "lucide-react"
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-luxury py-16 px-4 text-primary-foreground">
+    <footer className="relative bg-gradient-luxury py-16 px-4 text-primary-foreground">
+      {/* Gold divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-gold" />
+      
       <div className="container mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
