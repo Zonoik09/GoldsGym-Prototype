@@ -1,46 +1,34 @@
 import heritageImage from "@/assets/history-heritage.jpg";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const Story = () => {
-  const milestones = [
-    {
-      year: "1965",
-      title: "The Beginning",
-      description: "Joe Gold opens the original Gold's Gym in Venice Beach, California. A mecca for bodybuilding legends.",
-    },
-    {
-      year: "1977",
-      title: "Pumping Iron",
-      description: "Gold's Gym gains worldwide fame through the documentary featuring Arnold Schwarzenegger.",
-    },
-    {
-      year: "1990s",
-      title: "Global Expansion",
-      description: "Gold's Gym becomes an international brand, bringing world-class fitness to communities worldwide.",
-    },
-    {
-      year: "2024",
-      title: "Calgary Excellence",
-      description: "Five premium locations serve Calgary with the legendary Gold's Gym experience and community.",
-    },
-  ];
+  const scrollToLocations = () => {
+    const element = document.querySelector('#locations');
+    if (element) {
+      const headerHeight = 80;
+      const y = element.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section id="story" className="bg-secondary py-24 px-4">
-      <div className="container mx-auto max-w-7xl">
+    <section id="history" className="section-history bg-secondary py-24 px-4">
+      <div className="container mx-auto">
         {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-5xl font-bold text-gold md:text-6xl">
-            Our Story
+        <div className="mb-12 text-center">
+          <h2 className="mb-6 font-bold text-gold">
+            Our History
           </h2>
           <div className="mx-auto h-1 w-24 bg-gradient-gold" />
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-ivory">
-            From Venice Beach to Calgary, a legacy of strength, dedication, and community 
-            spanning nearly six decades.
+          <p className="lead mx-auto mt-8 max-w-3xl text-ivory">
+            What began in 1965 as a weightlifting revolution became a global movement. 
+            Gold's Gym shaped the culture of strength—then brought it home to Calgary.
           </p>
         </div>
 
         {/* Heritage Image */}
-        <div className="mb-20 overflow-hidden rounded-2xl shadow-elegant">
+        <div className="mb-16 overflow-hidden rounded-2xl shadow-elegant">
           <img
             src={heritageImage}
             alt="Gold's Gym Heritage - Venice Beach 1965"
@@ -48,46 +36,58 @@ const Story = () => {
           />
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2 bg-gradient-to-b from-gold via-gold-muted to-gold md:block" />
+        {/* History Content */}
+        <div className="mx-auto max-w-4xl space-y-12">
+          {/* 1965 */}
+          <div className="space-y-3">
+            <h3 className="text-2xl font-bold text-gold">1965 — Roots of Strength</h3>
+            <p className="text-lg text-ivory/90">
+              A small Venice Beach gym ignites a worldwide passion for discipline, 
+              resilience, and community.
+            </p>
+          </div>
 
-          <div className="space-y-16">
-            {milestones.map((milestone, index) => (
-              <div
-                key={milestone.year}
-                className={`relative flex flex-col items-center gap-8 md:flex-row ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Content */}
-                <div
-                  className={`flex-1 animate-slide-in ${
-                    index % 2 === 0 ? "md:text-right" : "md:text-left"
-                  }`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className="rounded-xl bg-card p-8 shadow-soft transition-smooth hover:shadow-gold">
-                    <span className="inline-block rounded-full bg-gradient-gold px-4 py-1 text-sm font-semibold text-primary">
-                      {milestone.year}
-                    </span>
-                    <h3 className="mt-4 text-2xl font-bold text-foreground">
-                      {milestone.title}
-                    </h3>
-                    <p className="mt-3 text-foreground/80">
-                      {milestone.description}
-                    </p>
-                  </div>
-                </div>
+          {/* Legacy Expands */}
+          <div className="space-y-3">
+            <h3 className="text-2xl font-bold text-gold">The Legacy Expands</h3>
+            <p className="text-lg text-ivory/90">
+              From classic bodybuilding icons to everyday athletes, our philosophy 
+              stayed the same: strength is for everyone.
+            </p>
+          </div>
 
-                {/* Timeline Dot */}
-                <div className="relative z-10 hidden h-4 w-4 rounded-full bg-gold shadow-gold md:block" />
+          {/* Calgary Chapter */}
+          <div className="space-y-3">
+            <h3 className="text-2xl font-bold text-gold">Calgary Chapter</h3>
+            <p className="text-lg text-ivory/90">
+              We brought that legacy to the Prairies—adapting the best of tradition 
+              to the rhythm of this city: friendly, driven, and authentically strong.
+            </p>
+          </div>
 
-                {/* Spacer */}
-                <div className="hidden flex-1 md:block" />
-              </div>
-            ))}
+          {/* Today & Tomorrow */}
+          <div className="space-y-3">
+            <h3 className="text-2xl font-bold text-gold">Today & Tomorrow</h3>
+            <p className="text-lg text-ivory/90">
+              Beyond weights and reps, we coach habits, mindset, and longevity—so 
+              you can live stronger, longer.
+            </p>
+          </div>
+
+          {/* Quote */}
+          <blockquote className="my-8 border-l-4 border-gold pl-6 italic text-xl text-ivory">
+            "Strength isn't just built in the gym—it's built in our community."
+          </blockquote>
+
+          {/* CTA */}
+          <div className="pt-8 text-center">
+            <Button 
+              onClick={scrollToLocations}
+              className="cta-history inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 font-bold text-primary transition-smooth hover:shadow-gold"
+            >
+              Explore Our Legacy
+              <ArrowRight className="h-5 w-5" />
+            </Button>
           </div>
         </div>
       </div>

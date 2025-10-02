@@ -63,12 +63,12 @@ const Locations = () => {
         </div>
 
         {/* Locations Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="locations-grid grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {locations.map((location, index) => (
             <div
               key={location.name}
-              className="group overflow-hidden rounded-2xl bg-card shadow-elegant transition-smooth hover:-translate-y-2 hover:shadow-gold border"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="location-card flex flex-col overflow-hidden rounded-2xl bg-card shadow-elegant transition-smooth hover:-translate-y-2 hover:shadow-gold border"
+              style={{ animationDelay: `${index * 0.1}s`, minHeight: '460px' }}
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
@@ -87,8 +87,8 @@ const Locations = () => {
                 )}
               </div>
 
-              {/* Content */}
-              <div className="p-6">
+              {/* Content Body */}
+              <div className="body flex flex-1 flex-col p-6">
                 <h3 className="mb-2 text-2xl font-bold text-gold">
                   {location.name}
                 </h3>
@@ -99,7 +99,7 @@ const Locations = () => {
                 </div>
 
                 {/* Features */}
-                <div className="mb-6 flex flex-wrap gap-2">
+                <div className="mb-4 flex flex-wrap gap-2">
                   {location.features.map((feature) => (
                     <span
                       key={feature}
@@ -109,13 +109,19 @@ const Locations = () => {
                     </span>
                   ))}
                 </div>
+              </div>
 
-                <Button variant="location" className="w-full group/btn" disabled={location.isComingSoon}>
+              {/* Actions - fixed at bottom */}
+              <div className="actions mt-auto p-6 pt-0">
+                <button 
+                  className="btn-explore w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-3.5 font-bold uppercase tracking-wide text-primary transition-all hover:-translate-y-0.5 hover:shadow-gold disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={location.isComingSoon}
+                >
                   {location.isComingSoon ? "Stay Tuned" : "Explore Location"}
                   {!location.isComingSoon && (
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    <ArrowRight className="h-4 w-4" />
                   )}
-                </Button>
+                </button>
               </div>
             </div>
           ))}

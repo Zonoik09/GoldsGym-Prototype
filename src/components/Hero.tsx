@@ -38,12 +38,12 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:justify-center">
-            <Button variant="hero" size="lg" className="group">
-              Explore Locations
+            <Button variant="hero" size="lg" className="group" data-cta="join-now">
+              Join Now
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button variant="heroOutline" size="lg">
-              Our Story
+            <Button variant="heroOutline" size="lg" data-cta="book-tour">
+              Book a Tour
             </Button>
           </div>
         </div>

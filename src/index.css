@@ -177,4 +177,89 @@ GOLD's GYM BUFFALO RUN - 11501 Buffalo Run Blvd #131, Tsuut'ina, AB T3T 0E4, Can
       transform: translateX(0);
     }
   }
+
+  /* Our History Section */
+  .section-history {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 20px;
+  }
+  
+  .section-history h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  
+  .section-history .lead {
+    font-size: clamp(18px, 2.2vw, 22px);
+    opacity: 0.9;
+    margin-bottom: 24px;
+  }
+  
+  .section-history blockquote {
+    border-left: 4px solid hsl(var(--gold));
+    padding-left: 14px;
+    margin: 20px 0;
+    font-style: italic;
+  }
+  
+  .section-history .cta-history {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: hsl(var(--gold));
+    color: hsl(var(--primary));
+    font-weight: 700;
+  }
+
+  /* Locations Grid */
+  .locations-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .location-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    background: hsl(var(--card));
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    min-height: 460px;
+  }
+
+  .location-card .body {
+    flex: 1 1 auto;
+    padding: 16px 18px;
+  }
+
+  .location-card .actions {
+    margin-top: auto;
+    padding: 16px 18px 18px;
+    display: flex;
+  }
+
+  .location-card .btn-explore {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: hsl(var(--gold));
+    color: hsl(var(--primary));
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: transform 0.08s ease, box-shadow 0.2s ease;
+  }
+  
+  .location-card .btn-explore:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(255, 204, 0, 0.25);
+  }
 }
