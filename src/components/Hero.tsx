@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden pt-20">
       {/* Hero Image with Overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 top-20">
         <img
           src={heroImage}
           alt="Gold's Gym Calgary - Premium Fitness"
