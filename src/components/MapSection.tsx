@@ -7,7 +7,7 @@ const MapSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="map" className="relative bg-primary py-24 px-4">
+    <section id="map" className="relative bg-gradient-luxury py-24 px-4">
       {/* Gold divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-gold" />
 

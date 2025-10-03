@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Gold's Gym Calgary - Prototype
 
-## Project info
+## 📌 Project Info / Información del Proyecto
 
-**URL**: https://lovable.dev/projects/5bd734db-d27c-4cc2-9597-1b4127c8dc3a
+**English:**
+This repository contains a prototype website for **Gold's Gym Calgary**. 
 
-## How can I edit this code?
+**Español:**
+Este repositorio contiene un prototipo de página web para **Gold's Gym Calgary**.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🔗 Live Preview / Vista Previa
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5bd734db-d27c-4cc2-9597-1b4127c8dc3a) and start prompting.
+👉 [Preview the project here](https://preview--golds-calgary-luxe.lovable.app/)
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## ⚙️ Installation & Setup / Instalación y Configuración
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+**English:**
+To run this project locally, follow these steps:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone the repository
+git clone https://github.com/Zonoik09/GoldsGym-Prototype.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd GoldsGym-Prototype
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+**Español:**
+Para ejecutar este proyecto en tu equipo local, sigue estos pasos:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+# Paso 1: Clonar el repositorio
+git clone https://github.com/Zonoik09/GoldsGym-Prototype.git
 
-**Use GitHub Codespaces**
+# Paso 2: Entrar en el directorio del proyecto
+cd GoldsGym-Prototype
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Paso 3: Instalar dependencias
+npm i
 
-## What technologies are used for this project?
+# Paso 4: Iniciar el servidor de desarrollo
+npm run dev
+```
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 💻 Requirements / Requisitos
 
-## How can I deploy this project?
+* Install **Node.js**:
 
-Simply open [Lovable](https://lovable.dev/projects/5bd734db-d27c-4cc2-9597-1b4127c8dc3a) and click on Share -> Publish.
+  * [Windows (direct download)](https://nodejs.org/dist/v22.20.0/node-v22.20.0-x64.msi)
+  * [macOS (direct download)](https://nodejs.org/dist/v22.20.0/node-v22.20.0.pkg)
+  * [Official download page](https://nodejs.org/en/download)
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🚀 Tech Stack / Tecnologías Utilizadas
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* ⚡ **Vite** – Fast build tool
+* 🟦 **TypeScript** – Type safety & scalability
+* ⚛️ **React** – UI library
+* 🎨 **shadcn/ui** – UI components
+* 💅 **Tailwind CSS** – Utility-first CSS framework
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+👨‍💻 Authors / Autores
+
+* [Jonathan Rueda Neiro](https://github.com/Zonoik09)
+
+* Izan Ferreiro Raya

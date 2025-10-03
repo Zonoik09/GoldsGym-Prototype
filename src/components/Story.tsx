@@ -18,7 +18,7 @@ const Story = () => {
   const isInView = useInView(containerRef, { once: true });
 
 return (
-    <section id="history" className="relative bg-primary py-24 px-4">
+    <section id="history" className="relative bg-gradient-luxury bg-primary py-24 px-4">
       {/* Gold divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-gold" />
 
