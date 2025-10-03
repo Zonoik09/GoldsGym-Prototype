@@ -28,31 +28,18 @@ const Hero = () => {
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-gold" />
             <p className="font-serif text-2x1 italic text-gold md:text-3xl">
-              WHERE LEGENDS ARE MADE
+              60 years of our history
             </p>
             <div className="h-px w-16 bg-gold" />
           </div>
-
 
           <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:justify-center">
             <Button variant="hero" size="lg" className="group" data-cta="join-now">
               Join Now
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button variant="heroOutline" size="lg" data-cta="book-tour">
-              Locations
-            </Button>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
-          <div className="flex flex-col items-center gap-2 text-ivory">
-            <span className="text-sm font-light">Scroll to explore</span>
-            <div className="h-8 w-px bg-gradient-to-b from-gold to-transparent" />
-          </div>
-        </div>
-
       
       </div>
     </section>
