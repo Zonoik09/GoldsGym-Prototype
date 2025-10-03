@@ -11,11 +11,7 @@ const Index = () => {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <LocationHero locationName="GOLD'S GYM DOUGLASDALE" locationId="douglasdale" />
-      <LocationHero locationName="GOLD'S GYM COUNTRY HILLS" locationId="country-hills" />
-      <LocationHero locationName="GOLD'S GYM NORTHGATE" locationId="northgate" />
-      <LocationHero locationName="GOLD'S GYM BUFFALO RUN" locationId="buffalo-run" />
-      <LocationHero locationName="GOLD'S GYM VILLAGE SQUARE" locationId="village-square" />
+
     </main>
   );
 };
