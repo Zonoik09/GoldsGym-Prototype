@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo_GoldsGym.png";
+import { Link } from "react-router-dom";
 
 const locations = [
-  { name: "GOLD'S GYM DOUGLASDALE", id: "douglasdale" },
-  { name: "GOLD'S GYM COUNTRY HILLS", id: "country-hills" },
-  { name: "GOLD'S GYM NORTHGATE", id: "northgate" },
-  { name: "GOLD'S GYM BUFFALO RUN", id: "buffalo-run" },
-  { name: "GOLD'S GYM VILLAGE SQUARE", id: "village-square" },
+  { name: "GOLD'S GYM DOUGLASDALE", path: "/douglasdale" },
+  { name: "GOLD'S GYM COUNTRY HILLS", path: "/countryhills" },
+  { name: "GOLD'S GYM NORTHGATE", path: "/northgate" },
+  { name: "GOLD'S GYM BUFFALO RUN", path: "/buffalo-run" },
+  { name: "GOLD'S GYM VILLAGE SQUARE", path: "/village-square" },
 ];
 
 const Header = () => {
@@ -25,15 +26,16 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {locations.map((location) => (
-              <a
-                key={location.id}
-                href={`#${location.id}`}
+              <Link
+                key={location.path}
+                to={location.path}
                 className="text-ivory text-sm font-semibold tracking-wide transition-smooth hover:text-gold"
               >
                 {location.name}
-              </a>
+              </Link>
             ))}
           </nav>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -49,14 +51,14 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="lg:hidden py-4 border-t border-gold/20">
             {locations.map((location) => (
-              <a
-                key={location.id}
-                href={`#${location.id}`}
+              <Link
+                key={location.path}
+                to={location.path}
                 onClick={() => setIsMenuOpen(false)}
                 className="py-3 text-ivory hover:text-gold transition-smooth font-semibold block"
               >
                 {location.name}
-              </a>
+              </Link>
             ))}
           </nav>
         )}

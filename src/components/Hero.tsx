@@ -39,7 +39,7 @@ const Hero = () => {
 
           <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:justify-center">
             <Button variant="hero" size="lg" className="group" data-cta="join-now">
-              Join Now
+              Watch our history
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
