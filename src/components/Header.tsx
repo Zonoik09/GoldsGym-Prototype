@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, MapPin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo_GoldsGym.png";
 
 const locations = [
@@ -28,9 +28,8 @@ const Header = () => {
               <a
                 key={location.id}
                 href={`#${location.id}`}
-                className="text-ivory text-sm font-semibold tracking-wide transition-smooth hover:text-gold flex items-center gap-2"
+                className="text-ivory text-sm font-semibold tracking-wide transition-smooth hover:text-gold"
               >
-                <MapPin className="h-4 w-4" />
                 {location.name}
               </a>
             ))}
@@ -54,9 +53,8 @@ const Header = () => {
                 key={location.id}
                 href={`#${location.id}`}
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center gap-3 py-3 text-ivory hover:text-gold transition-smooth font-semibold"
+                className="py-3 text-ivory hover:text-gold transition-smooth font-semibold block"
               >
-                <MapPin className="h-4 w-4" />
                 {location.name}
               </a>
             ))}
