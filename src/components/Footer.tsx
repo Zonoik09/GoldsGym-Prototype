@@ -67,61 +67,58 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="lg:col-span-2">
+          {/* Contact - Locations */}
+          <div>
             <h4 className="mb-4 text-lg font-semibold text-gold">Contact</h4>
-            
-            {/* Locations */}
-            <div className="mb-4">
-              <h5 className="mb-2 text-sm font-semibold text-gold/80">Our Locations</h5>
-              <ul className="space-y-2 text-sm text-ivory">
-                <li className="flex items-start gap-2">
-                  <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                  <span>Country Hills - (403) 300-4653</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                  <span>Northgate - (403) 272-4653</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                  <span>Douglasdale - (587) 391-3778</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                  <span>Buffalo Run - (403) 930-7948</span>
-                </li>
-              </ul>
-            </div>
+            <h5 className="mb-2 text-sm font-semibold text-gold/80">Our Locations</h5>
+            <ul className="space-y-2 text-sm text-ivory">
+              <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                <span>Country Hills - (403) 300-4653</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                <span>Northgate - (403) 272-4653</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                <span>Douglasdale - (587) 391-3778</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                <span>Buffalo Run - (403) 930-7948</span>
+              </li>
+            </ul>
+          </div>
 
-            {/* Email Contacts */}
-            <div>
-              <h5 className="mb-2 text-sm font-semibold text-gold/80">Email Us</h5>
-              <ul className="space-y-2 text-sm text-ivory">
-                <li className="flex items-start gap-2">
-                  <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                  <div>
-                    <div className="font-medium">Marketing</div>
-                    <div>marketing@goldsgymcalgary.com</div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                  <div>
-                    <div className="font-medium">Membership Issues</div>
-                    <div>golds.clients@goldsgymcalgary.com</div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                  <div>
-                    <div className="font-medium">Billing, Cancellations or Freezing</div>
-                    <div>customercare@abcfitness.com</div>
-                    <div className="mt-1">1 888-827-9262</div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          {/* Contact - Email */}
+          <div>
+            <h4 className="mb-4 text-lg font-semibold text-gold opacity-0">Contact</h4>
+            <h5 className="mb-2 text-sm font-semibold text-gold/80">Email Us</h5>
+            <ul className="space-y-2 text-sm text-ivory">
+              <li className="flex items-start gap-2">
+                <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                <div>
+                  <div className="font-medium">Marketing</div>
+                  <div>marketing@goldsgymcalgary.com</div>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                <div>
+                  <div className="font-medium">Membership Issues</div>
+                  <div>golds.clients@goldsgymcalgary.com</div>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                <div>
+                  <div className="font-medium">Billing, Cancellations or Freezing</div>
+                  <div>customercare@abcfitness.com</div>
+                  <div className="mt-1">1 888-827-9262</div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
