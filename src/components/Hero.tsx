@@ -3,27 +3,21 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-gym.jpg";
 import logo from "@/assets/logo_GoldsGym.png";
 import { motion } from "framer-motion";
+import videoSource from "@/assets/Legacy Video with Locations.mp4";
 
 const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden pt-20">
-      {/* Hero Image with Overlay */}
-      {/* PARA CAMBIAR A VIDEO: Reemplaza el <img> con <video autoPlay loop muted playsInline> */}
-      {/* Ejemplo: <video autoPlay loop muted playsInline className="h-full w-full object-cover">
-                    <source src={videoSource} type="video/mp4" />
-                  </video> */}
       <div className="absolute inset-0 top-20">
-        <img
-          src={heroImage}
-          alt="Gold's Gym Calgary - Premium Fitness"
-          className="h-full w-full object-cover"
-        />
+    <video autoPlay loop muted playsInline className="h-full w-full object-cover">
+                    <source src={videoSource} type="video/mp4" />
+                  </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-        <div className="max-w-4xl animate-fade-in-up space-y-6">
+        <div className="max-w-4xl animate-fade-in-up space-y-6 fondo-letras">
           <img src={logo} className="w-32 h-auto mx-auto" />
           <h1 className="font-serif text-6xl font-bold tracking-wide text-primary-foreground md:text-7xl lg:text-8xl text-white">
             GOLD'S GYM CALGARY

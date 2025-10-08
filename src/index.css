@@ -222,6 +222,13 @@ GOLD's GYM BUFFALO RUN - 11501 Buffalo Run Blvd #131, Tsuut'ina, AB T3T 0E4, Can
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 
+  .fondo-letras{
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 2%;
+    border-radius: 12px;
+    border: 2px solid hsl(var(--gold));
+  }
+
   .location-card {
     display: flex;
     flex-direction: column;
