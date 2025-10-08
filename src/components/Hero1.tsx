@@ -35,15 +35,6 @@ const Hero1 = () => {
                 <p className="text-ivory text-lg leading-relaxed">
                   Discover the legendary story of Gold's Gym and how it became the most iconic fitness brand in the world.
                 </p>
-                <Button
-                  variant="hero"
-                  size="lg"
-                  className="group"
-                  onClick={() => openVideo('history')}
-                >
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Video
-                </Button>
               </div>
 
               {/* Right Side - Video Preview */}
@@ -70,7 +61,7 @@ const Hero1 = () => {
         </section>
 
         {/* Second Section - Our History */}
-        <section className="relative min-h-screen w-full overflow-hidden bg-primary-dark">
+        <section className="relative min-h-screen w-full overflow-hidden bg-primary">
           <div className="container mx-auto px-4 py-16">
             <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-8rem)]">
               {/* Left Side - Content */}
@@ -88,15 +79,6 @@ const Hero1 = () => {
                 <p className="text-ivory text-lg leading-relaxed">
                   Experience the journey of Gold's Gym Calgary and how we've been transforming lives for six decades.
                 </p>
-                <Button
-                  variant="hero"
-                  size="lg"
-                  className="group"
-                  onClick={() => openVideo('our-history')}
-                >
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Video
-                </Button>
               </div>
 
               {/* Right Side - Video Preview */}

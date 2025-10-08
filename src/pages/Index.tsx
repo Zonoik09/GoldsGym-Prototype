@@ -11,7 +11,7 @@ const Index = () => {
     <main className="min-h-screen">
       <Header onToggleHero={() => setShowV2(!showV2)} />
       {showV2 ? <Hero1 /> : <Hero />}
-      <Footer />
+      {showV2 ? <Footer /> : null}
     </main>
   );
 };
