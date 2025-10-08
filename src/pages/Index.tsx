@@ -1,17 +1,17 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import LocationHero from "@/components/LocationHero";
-import Story from "@/components/Story";
-import Locations from "@/components/Locations";
+import Hero1 from "@/components/Hero1";
 import Footer from "@/components/Footer";
-import LocationMap from "@/components/MapSection";
 
 const Index = () => {
+  const [showV2, setShowV2] = useState(false);
+
   return (
     <main className="min-h-screen">
-      <Header />
-      <Hero />
-
+      <Header onToggleHero={() => setShowV2(!showV2)} />
+      {showV2 ? <Hero1 /> : <Hero />}
+      <Footer />
     </main>
   );
 };

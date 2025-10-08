@@ -11,7 +11,11 @@ const locations = [
   { name: "GOLD'S GYM VILLAGE SQUARE", path: "/village-square" },
 ];
 
-const Header = () => {
+interface HeaderProps {
+  onToggleHero?: () => void;
+}
+
+const Header = ({ onToggleHero }: HeaderProps = {}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -20,7 +24,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="Gold's Gym" className="h-12 w-auto" />
+            <Link to="/">
+              <img src={logo} alt="Gold's Gym" className="h-12 w-auto" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -34,6 +40,14 @@ const Header = () => {
                 {location.name}
               </Link>
             ))}
+            {onToggleHero && (
+              <button
+                onClick={onToggleHero}
+                className="text-ivory text-sm font-semibold tracking-wide transition-smooth hover:text-gold px-4 py-2 border border-gold/50 rounded"
+              >
+                V2
+              </button>
+            )}
           </nav>
 
 
@@ -60,6 +74,17 @@ const Header = () => {
                 {location.name}
               </Link>
             ))}
+            {onToggleHero && (
+              <button
+                onClick={() => {
+                  onToggleHero();
+                  setIsMenuOpen(false);
+                }}
+                className="py-3 text-ivory hover:text-gold transition-smooth font-semibold block w-full text-left"
+              >
+                V2
+              </button>
+            )}
           </nav>
         )}
       </div>
