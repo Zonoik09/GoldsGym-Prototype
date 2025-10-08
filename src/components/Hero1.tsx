@@ -54,12 +54,6 @@ const Hero1 = () => {
                   To center logo: add "flex flex-col items-center" to parent div
                   To remove logo: delete or comment out the <img> tag below */}
               <div className="space-y-6 animate-fade-in">
-                {/* Logo - centered with mx-auto, adjust w-32 to change size */}
-                <img 
-                  src={logo} 
-                  className="w-32 h-auto mx-auto lg:mx-0" 
-                  alt="Gold's Gym Logo" 
-                />
                 
                 {/* Main Heading - Change text size with text-5xl/text-6xl */}
                 <h2 className="font-serif text-5xl md:text-6xl font-bold text-white">
@@ -137,12 +131,6 @@ const Hero1 = () => {
               
               {/* LEFT SIDE - Text Content */}
               <div className="space-y-6 animate-fade-in">
-                {/* Logo - centered with mx-auto on all screens, left-aligned on large screens with lg:mx-0 */}
-                <img 
-                  src={logo} 
-                  className="w-32 h-auto mx-auto lg:mx-0" 
-                  alt="Gold's Gym Logo" 
-                />
                 
                 {/* Main Heading */}
                 <h2 className="font-serif text-5xl md:text-6xl font-bold text-white">
