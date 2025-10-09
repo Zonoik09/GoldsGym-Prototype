@@ -31,6 +31,7 @@ GOLD's GYM BUFFALO RUN - 11501 Buffalo Run Blvd #131, Tsuut'ina, AB T3T 0E4, Can
     --gold: 45 100% 51%;
     --gold-muted: 42 85% 45%;
     --gold-light: 48 95% 76%;
+    --gold1: 49 100% 49%;
 
     /* Ivory/warm neutrals */
     --ivory: 40 25% 92%;
@@ -126,6 +127,10 @@ GOLD's GYM BUFFALO RUN - 11501 Buffalo Run Blvd #131, Tsuut'ina, AB T3T 0E4, Can
 
   .bg-gold {
     background-color: hsl(var(--gold));
+  }
+
+  .bg-gold1 {
+    background-color: hsl(var(--gold1));
   }
 
   .bg-gradient-gold {

@@ -50,7 +50,7 @@ const Hero1 = () => {
             loop 
             muted 
             playsInline 
-            className="absolute inset-0 h-full w-full object-cover opacity-60"
+            className="absolute inset-0 h-full w-full object-cover opacity-10"
           >
             <source src={videoSource} type="video/mp4" />
           </video>
