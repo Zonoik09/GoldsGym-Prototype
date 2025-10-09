@@ -46,6 +46,9 @@ const Hero1 = () => {
         <section className="relative min-h-screen w-full overflow-hidden bg-primary">
           {/* Container with responsive padding - adjust px-4 and py-8 to change spacing */}
           <div className="container mx-auto px-4 py-8">
+            <video autoPlay loop muted playsInline className="h-full w-full object-cover">
+              <source src={videoSource} type="video/mp4" />
+            </video>
             {/* Grid Layout: 2 columns on large screens, 1 column on mobile */}
             {/* gap-12 controls spacing between left and right sides - increase for more space */}
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
@@ -127,6 +130,9 @@ const Hero1 = () => {
         <section className="relative min-h-screen w-full overflow-hidden bg-primary">
           {/* Reduced py-16 to py-8 to bring sections closer together */}
           <div className="container mx-auto px-4 py-8">
+            <video autoPlay loop muted playsInline className="h-full w-full object-cover">
+              <source src={videoSource} type="video/mp4" />
+            </video>
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
               
               {/* LEFT SIDE - Text Content */}

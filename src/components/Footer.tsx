@@ -145,6 +145,15 @@ const Footer = () => {
                   Buffalo Run - (403) 930-7948
                 </button>
               </li>
+              <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                <button 
+                  onClick={() => copyToClipboard("(403) 930-7948", "Phone number")}
+                  className="text-left transition-smooth hover:text-gold cursor-pointer"
+                >
+                  Village Square - (403) 984-5774
+                </button>
+              </li>
             </ul>
           </div>
 
