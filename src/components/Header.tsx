@@ -35,7 +35,7 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
               <Link
                 key={location.path}
                 to={location.path}
-                className="text-ivory text-sm font-semibold tracking-wide transition-smooth text-primary hover:text-white"
+                className="text-ivory text-base font-semibold tracking-wide transition-smooth text-primary hover:text-white"
               >
                 {location.name}
               </Link>
@@ -69,7 +69,7 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
                 key={location.path}
                 to={location.path}
                 onClick={() => setIsMenuOpen(false)}
-                className="py-3 text-ivory hover:text-gold transition-smooth font-semibold block"
+                className="py-3 text-ivory hover:text-gold transition-smooth font-semibold block text-base"
               >
                 {location.name}
               </Link>
