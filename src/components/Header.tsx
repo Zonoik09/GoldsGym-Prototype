@@ -25,7 +25,7 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
-              <img src={logo} alt="Gold's Gym" className="h-12 w-12" />
+              <img src={logo} alt="Gold's Gym" className="h-16 w-16" />
             </Link>
           </div>
 
