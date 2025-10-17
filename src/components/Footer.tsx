@@ -79,26 +79,26 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-gold">Quick Links</h4>
+            <h4 className="mb-4 text-lg font-semibold text-gold"></h4>
             <ul className="space-y-2 text-sm text-ivory">
               <li>
                 <a href="#story" className="transition-smooth hover:text-gold">
-                  Our Story
+                  
                 </a>
               </li>
               <li>
                 <a href="#locations" className="transition-smooth hover:text-gold">
-                  Locations
+                  
                 </a>
               </li>
               <li>
                 <a href="#experience" className="transition-smooth hover:text-gold">
-                  Experience
+                  
                 </a>
               </li>
               <li>
                 <a href="#" className="transition-smooth hover:text-gold">
-                  Membership
+                  
                 </a>
               </li>
             </ul>
@@ -112,19 +112,19 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
                 <button 
-                  onClick={() => copyToClipboard("(403) 300-4653", "Phone number")}
+                  onClick={() => copyToClipboard("(403) 272-4653", "Phone number")}
                   className="text-left transition-smooth hover:text-gold cursor-pointer"
                 >
-                  Country Hills - (403) 300-4653
+                  Northgate - (403) 272-4653
                 </button>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
                 <button 
-                  onClick={() => copyToClipboard("(403) 272-4653", "Phone number")}
+                  onClick={() => copyToClipboard("(403) 300-4653", "Phone number")}
                   className="text-left transition-smooth hover:text-gold cursor-pointer"
                 >
-                  Northgate - (403) 272-4653
+                  Country Hills - (403) 300-4653
                 </button>
               </li>
               <li className="flex items-start gap-2">
@@ -165,7 +165,7 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
                 <div>
-                  <div className="font-medium">Marketing</div>
+                  <div className="font-medium">For Marketing purpose</div>
                   <button 
                     onClick={() => copyToClipboard("marketing@goldsgymcalgary.com", "Email")}
                     className="transition-smooth hover:text-gold cursor-pointer text-left"
@@ -177,7 +177,7 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
                 <div>
-                  <div className="font-medium">Membership Issues</div>
+                  <div className="font-medium">For Memberships assistance</div>
                   <button 
                     onClick={() => copyToClipboard("golds.clients@goldsgymcalgary.com", "Email")}
                     className="transition-smooth hover:text-gold cursor-pointer text-left"
