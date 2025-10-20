@@ -1,11 +1,11 @@
-import Header1 from "@/components/Header1";
+import Header from "@/components/Header";
 import LocationHero from "@/components/LocationHero";
 import Footer from "@/components/Footer";
 
 const VillageSquare = () => {
   return (
     <main className="min-h-screen">
-      <Header1 />
+      <Header />
       <LocationHero
         locationName="GOLD'S GYM VILLAGE SQUARE"
         locationId="village-square"

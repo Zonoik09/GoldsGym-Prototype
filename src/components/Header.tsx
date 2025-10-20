@@ -23,7 +23,7 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center -ml-[30px]">
+          <div className="flex items-center">
             <Link to="/">
               <img src={logo} alt="Gold's Gym" className="h-16 w-16" />
             </Link>
