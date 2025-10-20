@@ -34,7 +34,7 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
               <img src={logo} alt="Gold's Gym" className="h-16 w-16" />
             </Link>
             {currentLocation && (
-              <span className="text-ivory text-xl font-bold tracking-wider text-primary">
+              <span className="text-ivory text-xl font-bold tracking-wider">
                 {currentLocation}
               </span>
             )}
@@ -46,7 +46,7 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
               <Link
                 key={location.path}
                 to={location.name === "Home" ? homeLink : location.path}
-                className="text-ivory text-base font-semibold tracking-wide transition-smooth hover:text-white text-primary"
+                className="text-ivory text-base font-semibold tracking-wide transition-smooth hover:text-gold"
               >
                 {location.name}
               </Link>

@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LocationProvider } from "./contexts/LocationContext";
 
 import Index from "./pages/Index";
-import CountryHills from "./pages/country-hills";
+import CountryHills from "./pages/countryhills";
 import Douglasdale from "./pages/douglasdale";
 import Northgate from "./pages/northgate";
 import BuffaloRun from "./pages/buffalo-run";

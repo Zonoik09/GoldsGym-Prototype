@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const locations = [
   { name: "GOLD'S GYM NORTHGATE", path: "/northgate" },
-  { name: "GOLD'S GYM COUNTRY HILLS", path: "/country-hills" },
+  { name: "GOLD'S GYM COUNTRY HILLS", path: "/countryhills" },
   { name: "GOLD'S GYM DOUGLASDALE", path: "/douglasdale" },
   { name: "GOLD'S GYM BUFFALO RUN", path: "/buffalo-run" },
   { name: "GOLD'S GYM VILLAGE SQUARE", path: "/village-square" },
