@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const Services = () => {
   return (
     <main className="min-h-screen">
-      <Header locationName="SERVICES" />
+      <Header />
       <LocationHero
         locationName="GYM SERVICES"
         locationId="services"

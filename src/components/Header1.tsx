@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo_GoldsGym.png";
 import { Link } from "react-router-dom";
+import { useLocation } from "@/contexts/LocationContext";
 
 const locations = [
   { name: "Home", path: "/" },
@@ -15,35 +16,37 @@ const locations = [
 
 interface HeaderProps {
   onToggleHero?: () => void;
-  locationName?: string;
 }
 
-const Header = ({ onToggleHero, locationName }: HeaderProps = {}) => {
+const Header = ({ onToggleHero }: HeaderProps = {}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { currentLocation } = useLocation();
+  
+  const homeLink = currentLocation ? `/${currentLocation.toLowerCase().replace(/\s+/g, '-')}` : "/";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gold1 backdrop-blur-sm border-b border-gold/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 gap-8">
           {/* Logo */}
-          <div className="flex items-center gap-4 -ml-[30px]">
+          <div className="flex items-center gap-4">
             <Link to="/">
               <img src={logo} alt="Gold's Gym" className="h-16 w-16" />
             </Link>
-            {locationName && (
-              <span className="text-ivory text-xl font-bold tracking-wider text-primary">
-                {locationName}
+            {currentLocation && (
+              <span className="text-ivory text-xl font-bold tracking-wider">
+                {currentLocation}
               </span>
             )}
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 ml-auto">
+          <nav className="hidden lg:flex items-center gap-6 ml-auto">
             {locations.map((location) => (
               <Link
                 key={location.path}
-                to={location.path}
-                className="text-ivory text-base font-semibold tracking-wide transition-smooth text-primary hover:text-white"
+                to={location.name === "Home" ? homeLink : location.path}
+                className="text-ivory text-base font-semibold tracking-wide transition-smooth hover:text-gold"
               >
                 {location.name}
               </Link>
@@ -75,7 +78,7 @@ const Header = ({ onToggleHero, locationName }: HeaderProps = {}) => {
             {locations.map((location) => (
               <Link
                 key={location.path}
-                to={location.path}
+                to={location.name === "Home" ? homeLink : location.path}
                 onClick={() => setIsMenuOpen(false)}
                 className="py-3 text-ivory hover:text-gold transition-smooth font-semibold block text-base"
               >

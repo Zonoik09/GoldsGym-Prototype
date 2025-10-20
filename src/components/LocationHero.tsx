@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, X } from "lucide-react";
-import videoSource from "@/assets/Legacy Video with Locations.mp4";
+import { Play, X } from "lucide-react";
 import logo from "@/assets/logo_GoldsGym.png";
+import videoSource from "@/assets/Legacy Video with Locations.mp4";
 
 interface LocationHeroProps {
   locationName: string;
@@ -11,48 +10,135 @@ interface LocationHeroProps {
 
 const LocationHero = ({ locationName, locationId }: LocationHeroProps) => {
   const [showVideoPlayer, setShowVideoPlayer] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState<'first' | 'second'>('first');
+
+  const openVideo = (type: 'first' | 'second') => {
+    setCurrentVideo(type);
+    setShowVideoPlayer(true);
+  };
 
   return (
     <>
-      <section id={locationId} className="relative h-screen w-full overflow-hidden pt-20">
-        {/* Video Background */}
-        <div className="absolute inset-0 top-20">
-          <video autoPlay loop muted playsInline className="h-full w-full object-cover">
+      <div className="pt-20">
+        {/* First Section */}
+        <section id={locationId} className="relative min-h-screen w-full overflow-hidden bg-primary">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 h-full w-full object-cover opacity-10"
+          >
             <source src={videoSource} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
-        </div>
+          
+          <div className="container mx-auto px-4 py-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
+              
+              <div className="space-y-6 animate-fade-in">
+                <h2 className="font-serif text-5xl md:text-6xl font-bold text-white">
+                  {locationName}
+                </h2>
+                
+                <div className="flex items-center gap-4">
+                  <div className="h-px w-16 bg-gold" />
+                  <p className="font-serif text-xl italic text-gold">
+                    60 years of excellence
+                  </p>
+                </div>
+                
+                <p className="text-ivory text-lg leading-relaxed">
+                  Discover our legendary location and how we've been transforming lives in Calgary.
+                </p>
+              </div>
 
-        {/* Content */}
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-          <div className="max-w-4xl animate-fade-in-up space-y-6">
-            <img src={logo} className="w-32 h-auto mx-auto" alt="Gold's Gym Logo" />
-            <h1 className="font-serif text-6xl font-bold tracking-wide text-primary-foreground md:text-7xl lg:text-8xl text-white">
-              {locationName}
-            </h1>
-            
-            <div className="flex items-center justify-center gap-4">
-              <div className="h-px w-16 bg-gold" />
-              <p className="font-serif text-2xl italic text-gold md:text-3xl">
-                60 years of our history
-              </p>
-              <div className="h-px w-16 bg-gold" />
-            </div>
-
-            <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:justify-center">
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="group"
-                onClick={() => setShowVideoPlayer(true)}
-              >
-                Watch our history
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <div className="relative rounded-lg overflow-hidden shadow-2xl transform scale-110">
+                <video
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
+                  className="w-full h-auto"
+                >
+                  <source src={videoSource} type="video/mp4" />
+                </video>
+                
+                <div 
+                  className="absolute inset-0 bg-black/20 flex items-center justify-center group hover:bg-black/40 transition-all cursor-pointer"
+                  onClick={() => openVideo('first')}
+                >
+                  <div className="bg-gold/90 rounded-full p-6 group-hover:scale-110 transition-transform">
+                    <Play className="h-12 w-12 text-primary" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </section>
+
+        {/* Gold Divider */}
+        <div className="w-full bg-primary">
+          <div className="container mx-auto">
+            <div className="h-px bg-[#FFD700] w-full my-0" />
+          </div>
         </div>
-      </section>
+
+        {/* Second Section */}
+        <section className="relative min-h-screen w-full overflow-hidden bg-primary">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 h-full w-full object-cover opacity-60"
+          >
+            <source src={videoSource} type="video/mp4" />
+          </video>
+          
+          <div className="container mx-auto px-4 py-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
+              
+              <div className="space-y-6 animate-fade-in">
+                <h2 className="font-serif text-5xl md:text-6xl font-bold text-white">
+                  Our Legacy
+                </h2>
+                
+                <div className="flex items-center gap-4">
+                  <div className="h-px w-16 bg-gold" />
+                  <p className="font-serif text-xl italic text-gold">
+                    Calgary's fitness destination
+                  </p>
+                </div>
+                
+                <p className="text-ivory text-lg leading-relaxed">
+                  Experience the journey of Gold's Gym and how we've been the premier fitness destination for six decades.
+                </p>
+              </div>
+
+              <div className="relative rounded-lg overflow-hidden shadow-2xl transform scale-110">
+                <video
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
+                  className="w-full h-auto"
+                >
+                  <source src={videoSource} type="video/mp4" />
+                </video>
+                
+                <div 
+                  className="absolute inset-0 bg-black/20 flex items-center justify-center group hover:bg-black/40 transition-all cursor-pointer"
+                  onClick={() => openVideo('second')}
+                >
+                  <div className="bg-gold/90 rounded-full p-6 group-hover:scale-110 transition-transform">
+                    <Play className="h-12 w-12 text-primary" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* Video Player Modal */}
       {showVideoPlayer && (
@@ -64,7 +150,14 @@ const LocationHero = ({ locationName, locationId }: LocationHeroProps) => {
           >
             <X className="h-8 w-8" />
           </button>
+          
           <div className="w-full max-w-6xl">
+            <div className="mb-4 text-center">
+              <h3 className="text-2xl font-bold text-white">
+                {currentVideo === 'first' ? locationName : 'Our Legacy'}
+              </h3>
+            </div>
+            
             <video controls autoPlay className="w-full h-auto">
               <source src={videoSource} type="video/mp4" />
             </video>

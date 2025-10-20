@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const Tour = () => {
   return (
     <main className="min-h-screen">
-      <Header locationName="TOUR" />
+      <Header />
       <LocationHero
         locationName="TOUR OUR GYM"
         locationId="tour"
