@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header1";
 import LocationHero from "@/components/LocationHero";
 import Footer from "@/components/Footer";
 
