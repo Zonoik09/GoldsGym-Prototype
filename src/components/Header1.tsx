@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const locations = [
   { name: "Home", path: "/" },
   { name: "Plans memberships", path: "/plans-memberships" },
-  { name: "PT", path: "/personal-training" },
+  { name: "Personal Trainer", path: "/personal-training" },
   { name: "Classes", path: "/classes" },
   { name: "Tour", path: "/tour" },
   { name: "Services", path: "/services" },
@@ -31,7 +31,7 @@ const Header = ({ onToggleHero, locationName }: HeaderProps = {}) => {
               <img src={logo} alt="Gold's Gym" className="h-16 w-16" />
             </Link>
             {locationName && (
-              <span className="text-ivory text-xl font-bold tracking-wider">
+              <span className="text-ivory text-xl font-bold tracking-wider text-primary">
                 {locationName}
               </span>
             )}
