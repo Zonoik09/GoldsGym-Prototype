@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const BuffaloRun = () => {
   return (
     <main className="min-h-screen">
-      <Header />
+      <Header locationName="BUFFALO RUN" />
       <LocationHero
         locationName="GOLD'S GYM BUFFALO RUN"
         locationId="buffalo-run"

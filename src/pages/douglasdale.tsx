@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const Douglasdale = () => {
   return (
     <main className="min-h-screen">
-      <Header />
+      <Header locationName="DOUGLASDALE" />
       <LocationHero
         locationName="GOLD'S GYM DOUGLASDALE"
         locationId="douglasdale"

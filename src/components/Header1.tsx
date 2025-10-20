@@ -15,9 +15,10 @@ const locations = [
 
 interface HeaderProps {
   onToggleHero?: () => void;
+  locationName?: string;
 }
 
-const Header = ({ onToggleHero }: HeaderProps = {}) => {
+const Header = ({ onToggleHero, locationName }: HeaderProps = {}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -25,10 +26,15 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center -ml-[30px]">
+          <div className="flex items-center gap-4 -ml-[30px]">
             <Link to="/">
               <img src={logo} alt="Gold's Gym" className="h-16 w-16" />
             </Link>
+            {locationName && (
+              <span className="text-ivory text-xl font-bold tracking-wider">
+                {locationName}
+              </span>
+            )}
           </div>
 
           {/* Desktop Navigation */}
