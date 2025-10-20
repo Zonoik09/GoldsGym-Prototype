@@ -4,13 +4,13 @@ import logo from "@/assets/logo_GoldsGym.png";
 import { Link } from "react-router-dom";
 
 const locations = [
-  { name: "Home", path: "/northgate" },
-  { name: "Plans memberships", path: "/countryhills" },
-  { name: "PT", path: "/douglasdale" },
-  { name: "Classes", path: "/buffalo-run" },
-  { name: "Tour", path: "/village-square" },
-  { name: "Services", path: "/buffalo-run" },
-  { name: "testimony", path: "/village-square" },
+  { name: "Home", path: "/" },
+  { name: "Plans memberships", path: "/plans-memberships" },
+  { name: "PT", path: "/personal-training" },
+  { name: "Classes", path: "/classes" },
+  { name: "Tour", path: "/tour" },
+  { name: "Services", path: "/services" },
+  { name: "Testimony", path: "/testimony" },
 ];
 
 interface HeaderProps {
@@ -24,7 +24,7 @@ const Header = ({ onToggleHero, locationName }: HeaderProps = {}) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gold1 backdrop-blur-sm border-b border-gold/20">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 gap-8">
           {/* Logo */}
           <div className="flex items-center gap-4 -ml-[30px]">
             <Link to="/">
@@ -38,7 +38,7 @@ const Header = ({ onToggleHero, locationName }: HeaderProps = {}) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8 ml-auto">
             {locations.map((location) => (
               <Link
                 key={location.path}

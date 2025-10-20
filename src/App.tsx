@@ -10,6 +10,12 @@ import Douglasdale from "./pages/douglasdale";
 import Northgate from "./pages/northgate";
 import BuffaloRun from "./pages/buffalo-run";
 import VillageSquare from "./pages/village-square";
+import PlansMemberships from "./pages/plans-memberships";
+import PersonalTraining from "./pages/personal-training";
+import Classes from "./pages/classes";
+import Tour from "./pages/tour";
+import Services from "./pages/services";
+import Testimony from "./pages/testimony";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +28,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/plans-memberships" element={<PlansMemberships />} />
+          <Route path="/personal-training" element={<PersonalTraining />} />
+          <Route path="/classes" element={<Classes />} />
+          <Route path="/tour" element={<Tour />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/testimony" element={<Testimony />} />
           <Route path="/douglasdale" element={<Douglasdale />} />
           <Route path="/countryhills" element={<CountryHills />} />
           <Route path="/northgate" element={<Northgate />} />
