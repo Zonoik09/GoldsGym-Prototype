@@ -75,69 +75,6 @@ const LocationHero = ({ locationName, locationId }: LocationHeroProps) => {
             </div>
           </div>
         </section>
-
-        {/* Gold Divider */}
-        <div className="w-full bg-primary">
-          <div className="container mx-auto">
-            <div className="h-px bg-[#FFD700] w-full my-0" />
-          </div>
-        </div>
-
-        {/* Second Section */}
-        <section className="relative min-h-screen w-full overflow-hidden bg-primary">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="absolute inset-0 h-full w-full object-cover opacity-60"
-          >
-            <source src={videoSource} type="video/mp4" />
-          </video>
-          
-          <div className="container mx-auto px-4 py-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
-              
-              <div className="space-y-6 animate-fade-in">
-                <h2 className="font-serif text-5xl md:text-6xl font-bold text-white">
-                  Our Legacy
-                </h2>
-                
-                <div className="flex items-center gap-4">
-                  <div className="h-px w-16 bg-gold" />
-                  <p className="font-serif text-xl italic text-gold">
-                    Calgary's fitness destination
-                  </p>
-                </div>
-                
-                <p className="text-ivory text-lg leading-relaxed">
-                  Experience the journey of Gold's Gym and how we've been the premier fitness destination for six decades.
-                </p>
-              </div>
-
-              <div className="relative rounded-lg overflow-hidden shadow-2xl transform scale-110">
-                <video
-                  muted
-                  loop
-                  autoPlay
-                  playsInline
-                  className="w-full h-auto"
-                >
-                  <source src={videoSource} type="video/mp4" />
-                </video>
-                
-                <div 
-                  className="absolute inset-0 bg-black/20 flex items-center justify-center group hover:bg-black/40 transition-all cursor-pointer"
-                  onClick={() => openVideo('second')}
-                >
-                  <div className="bg-gold/90 rounded-full p-6 group-hover:scale-110 transition-transform">
-                    <Play className="h-12 w-12 text-primary" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
 
       {/* Video Player Modal */}
@@ -154,7 +91,7 @@ const LocationHero = ({ locationName, locationId }: LocationHeroProps) => {
           <div className="w-full max-w-6xl">
             <div className="mb-4 text-center">
               <h3 className="text-2xl font-bold text-white">
-                {currentVideo === 'first' ? locationName : 'Our Legacy'}
+                {locationName}
               </h3>
             </div>
             

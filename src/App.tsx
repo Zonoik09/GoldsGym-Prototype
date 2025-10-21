@@ -13,6 +13,7 @@ import BuffaloRun from "./pages/buffalo-run";
 import VillageSquare from "./pages/village-square";
 import PlansMemberships from "./pages/plans-memberships";
 import PersonalTraining from "./pages/personal-training";
+import Payment from "./pages/payment";
 import Classes from "./pages/classes";
 import Tour from "./pages/tour";
 import Services from "./pages/services";
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/classes" element={<Classes />} />
             <Route path="/tour" element={<Tour />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/payment-plans" element={<Payment />} />
             <Route path="/testimony" element={<Testimony />} />
             <Route path="/douglasdale" element={<Douglasdale />} />
             <Route path="/countryhills" element={<CountryHills />} />

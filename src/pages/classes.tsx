@@ -1,15 +1,12 @@
 import Header from "@/components/Header1";
-import LocationHero from "@/components/LocationHero";
+import GroupClasses from "@/components/GroupClasses";
 import Footer from "@/components/Footer";
 
 const Classes = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-primary text-white">
       <Header />
-      <LocationHero
-        locationName="CLASSES"
-        locationId="classes"
-      />
+      <GroupClasses locationId="douglasdale" />
       <Footer />
     </main>
   );

@@ -1,16 +1,15 @@
 import Header from "@/components/Header1";
-import PersonalTrainers from "@/components/PersonalTrainers";
+import Hero from "@/components/payment";
 import Footer from "@/components/Footer";
 
-const PersonalTraining = () => {
+const Payment = () => {
   return (
     <main className="min-h-screen">
       <Header />
-      <PersonalTrainers
-      />
+      <Hero />
       <Footer />
     </main>
   );
 };
 
-export default PersonalTraining;
+export default Payment;

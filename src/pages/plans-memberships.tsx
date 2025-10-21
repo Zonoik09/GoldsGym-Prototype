@@ -1,15 +1,12 @@
 import Header from "@/components/Header1";
-import LocationHero from "@/components/LocationHero";
+import PlansMember from "@/components/plansMemberships";
 import Footer from "@/components/Footer";
 
 const PlansMemberships = () => {
   return (
     <main className="min-h-screen">
       <Header />
-      <LocationHero
-        locationName="PLANS & MEMBERSHIPS"
-        locationId="plans-memberships"
-      />
+      <PlansMember/>
       <Footer />
     </main>
   );

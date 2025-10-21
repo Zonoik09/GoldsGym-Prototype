@@ -54,7 +54,7 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-ivory hover:text-gold transition-smooth"
+            className="lg:hidden text-ivory hover:text-white transition-smooth text-primary"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -69,7 +69,7 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
                 key={location.path}
                 to={location.path}
                 onClick={() => setIsMenuOpen(false)}
-                className="py-3 text-ivory hover:text-gold transition-smooth font-semibold block text-base"
+                className="py-3 text-ivory hover:text-white text-primary transition-smooth font-semibold block text-base"
               >
                 {location.name}
               </Link>
