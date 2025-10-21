@@ -44,14 +44,22 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6 ml-auto">
-            {locations.map((location) => (
-              <Link
-                key={location.path}
-                to={location.name === "Home" ? homeLink : location.path}
-                className="text-ivory text-base font-semibold tracking-wide transition-smooth hover:text-white text-primary">
-                {location.name}
-              </Link>
-            ))}
+            {locations.map((location) => {
+              const linkPath = location.name === "Home" 
+                ? homeLink 
+                : currentLocation 
+                  ? `/${currentLocation.toLowerCase().replace(/\s+/g, currentLocation.toLowerCase() === 'country hills' ? '' : '-')}${location.path}`
+                  : location.path;
+              
+              return (
+                <Link
+                  key={location.path}
+                  to={linkPath}
+                  className="text-ivory text-base font-semibold tracking-wide transition-smooth hover:text-white text-primary">
+                  {location.name}
+                </Link>
+              );
+            })}
             {onToggleHero && (
               <button
                 onClick={onToggleHero}
@@ -76,16 +84,24 @@ const Header = ({ onToggleHero }: HeaderProps = {}) => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="lg:hidden py-4 border-t border-gold/20">
-            {locations.map((location) => (
-              <Link
-                key={location.path}
-                to={location.name === "Home" ? homeLink : location.path}
-                onClick={() => setIsMenuOpen(false)}
-                className="py-3 text-ivory hover:text-white text-primary transition-smooth font-semibold block text-base"
-              >
-                {location.name}
-              </Link>
-            ))}
+            {locations.map((location) => {
+              const linkPath = location.name === "Home" 
+                ? homeLink 
+                : currentLocation 
+                  ? `/${currentLocation.toLowerCase().replace(/\s+/g, currentLocation.toLowerCase() === 'country hills' ? '' : '-')}${location.path}`
+                  : location.path;
+              
+              return (
+                <Link
+                  key={location.path}
+                  to={linkPath}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="py-3 text-ivory hover:text-white text-primary transition-smooth font-semibold block text-base"
+                >
+                  {location.name}
+                </Link>
+              );
+            })}
             {onToggleHero && (
               <button
                 onClick={() => {

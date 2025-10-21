@@ -6,7 +6,11 @@ import trainer2 from "@/assets/experience-training.jpg";
 import trainer3 from "@/assets/experience-training.jpg";
 import trainer4 from "@/assets/experience-training.jpg";
 
-const PersonalTrainingPackages = () => {
+interface PersonalTrainingPackagesProps {
+  locationId: string;
+}
+
+const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ locationId }) => {
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
 
   const packages = [

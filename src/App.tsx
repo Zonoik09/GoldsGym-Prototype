@@ -31,18 +31,18 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/plans-memberships" element={<PlansMemberships />} />
-            <Route path="/personal-training" element={<PersonalTraining />} />
-            <Route path="/classes" element={<Classes />} />
-            <Route path="/tour" element={<Tour />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/payment-plans" element={<Payment />} />
-            <Route path="/testimony" element={<Testimony />} />
             <Route path="/douglasdale" element={<Douglasdale />} />
             <Route path="/countryhills" element={<CountryHills />} />
             <Route path="/northgate" element={<Northgate />} />
             <Route path="/buffalo-run" element={<BuffaloRun />} />
             <Route path="/village-square" element={<VillageSquare />} />
+            <Route path="/:location/plans-memberships" element={<PlansMemberships />} />
+            <Route path="/:location/personal-training" element={<PersonalTraining />} />
+            <Route path="/:location/classes" element={<Classes />} />
+            <Route path="/:location/tour" element={<Tour />} />
+            <Route path="/:location/services" element={<Services />} />
+            <Route path="/:location/testimony" element={<Testimony />} />
+            <Route path="/payment-plans" element={<Payment />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

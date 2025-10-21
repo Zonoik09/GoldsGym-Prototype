@@ -4,13 +4,15 @@ import logo from "@/assets/logo_GoldsGym.png";
 import videoSource from "@/assets/Legacy Video with Locations.mp4";
 
 interface LocationHeroProps {
-  locationName: string;
+  locationName?: string;
   locationId: string;
 }
 
 const LocationHero = ({ locationName, locationId }: LocationHeroProps) => {
   const [showVideoPlayer, setShowVideoPlayer] = useState(false);
   const [currentVideo, setCurrentVideo] = useState<'first' | 'second'>('first');
+
+  const displayName = locationName || locationId.toUpperCase();
 
   const openVideo = (type: 'first' | 'second') => {
     setCurrentVideo(type);
@@ -37,7 +39,7 @@ const LocationHero = ({ locationName, locationId }: LocationHeroProps) => {
               
               <div className="space-y-6 animate-fade-in">
                 <h2 className="font-serif text-5xl md:text-6xl font-bold text-white">
-                  {locationName}
+                  {displayName}
                 </h2>
                 
                 <div className="flex items-center gap-4">
@@ -91,7 +93,7 @@ const LocationHero = ({ locationName, locationId }: LocationHeroProps) => {
           <div className="w-full max-w-6xl">
             <div className="mb-4 text-center">
               <h3 className="text-2xl font-bold text-white">
-                {locationName}
+                {displayName}
               </h3>
             </div>
             
