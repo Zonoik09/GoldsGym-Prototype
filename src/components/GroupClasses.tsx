@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 type ClassSchedule = {
   day: string;
@@ -10,7 +10,7 @@ type ClassSchedule = {
 type Schedules = Record<string, ClassSchedule[]>;
 
 const schedules: Schedules = {
-  countryHills: [
+  countryhills: [
     { day: "Sun", time: "6:00 PM - 7:00 PM", className: "Bollywood Dance", instructor: "Pinky" },
     { day: "Sun", time: "7:30 PM - 8:30 PM", className: "Boxing", instructor: "Robbie" },
     { day: "Mon", time: "6:00 PM - 6:45 PM", className: "Step", instructor: "Roulia" },
@@ -31,7 +31,7 @@ const schedules: Schedules = {
     { day: "Fri", time: "10:30 AM - 11:15 AM", className: "Pilates", instructor: "Kristi" },
     { day: "Sat", time: "9:30 AM - 10:30 AM", className: "Spin+", instructor: "Kristi" },
   ],
-  buffaloRun: [
+  buffalorun: [
     { day: "Sun", time: "11:00 AM - 12:30 PM", className: "Boxing", instructor: "Robbie" },
     { day: "Mon", time: "6:00 PM - 6:45 PM", className: "Spin", instructor: "Jodi" },
     { day: "Tue", time: "6:30 PM - 7:30 PM", className: "Boxing", instructor: "Robbie" },
@@ -41,7 +41,19 @@ const schedules: Schedules = {
   ],
 };
 
-const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+// Mapeo de abreviaciones → nombres completos
+const dayNames: Record<string, string> = {
+  Sun: "Sunday",
+  Mon: "Monday",
+  Tue: "Tuesday",
+  Wed: "Wednesday",
+  Thu: "Thursday",
+  Fri: "Friday",
+  Sat: "Saturday",
+};
+
+const daysOfWeek = Object.keys(dayNames); // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
 const timeSlots = [
   "5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM",
   "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM",
@@ -53,28 +65,31 @@ interface GroupClassesProps {
 }
 
 const GroupClasses: React.FC<GroupClassesProps> = ({ locationId }) => {
-  const locationKey = locationId.toLowerCase().replace(/\s+/g, "");
+  const locationKey = locationId.toLowerCase().replace(/[-\s]+/g, "");
   const schedule = schedules[locationKey] || [];
-const parseHour = (timeStr: string) => {
-  // Convierte "7:30 PM" en 19.5, "6:00 AM" en 6
-  const [hour, minutePart] = timeStr.split(":");
-  const [minutes, ampm] = minutePart.split(" ");
-  let h = parseInt(hour);
-  if (ampm === "PM" && h !== 12) h += 12;
-  if (ampm === "AM" && h === 12) h = 0;
-  return h + parseInt(minutes) / 60;
-};
 
-const getClassForSlot = (day: string, time: string) => {
-  const slotHour = parseHour(time);
-  return schedule.find((c) => {
-    if (c.day !== day) return false;
-    const [start] = c.time.split(" - ");
-    const startHour = parseHour(start);
-    return Math.abs(startHour - slotHour) < 1; 
-  });
-};
+  const [selectedClass, setSelectedClass] = useState<ClassSchedule | null>(null);
 
+  const parseHour = (timeStr: string) => {
+    const [hour, minutePart] = timeStr.split(":");
+    const [minutes, ampm] = minutePart.split(" ");
+    let h = parseInt(hour);
+    if (ampm === "PM" && h !== 12) h += 12;
+    if (ampm === "AM" && h === 12) h = 0;
+    return h + parseInt(minutes) / 60;
+  };
+
+  const getClassForSlot = (day: string, time: string) => {
+    const slotHour = parseHour(time);
+    return schedule.find((c) => {
+      if (c.day !== day) return false;
+      const [start] = c.time.split(" - ");
+      const startHour = parseHour(start);
+      return Math.abs(startHour - slotHour) < 1;
+    });
+  };
+
+  const formattedTitle = locationId.replace(/[-]/g, " ").toUpperCase();
 
   return (
     <section className="relative py-16 bg-primary text-white">
@@ -95,10 +110,10 @@ const getClassForSlot = (day: string, time: string) => {
 
         {/* Schedule Title */}
         <p className="text-center text-gold text-2xl font-bold mb-6">
-          {locationId.toUpperCase()} GGX SCHEDULE
+          {formattedTitle} GGX SCHEDULE
         </p>
 
-        {/* Horario tipo calendario */}
+        {/* Calendar Table */}
         <div className="overflow-x-auto">
           <table className="min-w-[1000px] w-full border-collapse border border-gold/30 text-center">
             <thead>
@@ -106,7 +121,7 @@ const getClassForSlot = (day: string, time: string) => {
                 <th className="border border-gold/30 py-2 px-3 text-gold font-bold">Time</th>
                 {daysOfWeek.map((day) => (
                   <th key={day} className="border border-gold/30 py-2 px-3 text-gold font-bold">
-                    {day}
+                    {dayNames[day]}
                   </th>
                 ))}
               </tr>
@@ -127,6 +142,7 @@ const getClassForSlot = (day: string, time: string) => {
                             ? "bg-gold/10 hover:bg-gold/20 cursor-pointer"
                             : "bg-transparent"
                         }`}
+                        onClick={() => classInfo && setSelectedClass(classInfo)}
                       >
                         {classInfo ? (
                           <div className="text-xs">
@@ -146,6 +162,44 @@ const getClassForSlot = (day: string, time: string) => {
           </table>
         </div>
       </div>
+
+      {/* Modal Detalle de Clase */}
+      {selectedClass && (
+        <div
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
+          onClick={() => setSelectedClass(null)}
+        >
+          <div
+            className="bg-primary border border-gold/40 rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedClass(null)}
+              className="absolute top-3 right-4 text-gold text-2xl font-bold hover:text-ivory"
+            >
+              ×
+            </button>
+            <h3 className="text-3xl font-bold text-gold mb-3">{selectedClass.className}</h3>
+            <p className="text-lg text-ivory mb-1">
+              <span className="font-semibold text-gold">Day:</span>{" "}
+              {dayNames[selectedClass.day] || selectedClass.day}
+            </p>
+            <p className="text-lg text-ivory mb-1">
+              <span className="font-semibold text-gold">Time:</span> {selectedClass.time}
+            </p>
+            <p className="text-lg text-ivory mb-6">
+              <span className="font-semibold text-gold">Instructor:</span> {selectedClass.instructor}
+            </p>
+
+            <button
+              onClick={() => setSelectedClass(null)}
+              className="bg-gold text-black font-bold px-6 py-2 rounded-xl hover:bg-gold/80 transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
