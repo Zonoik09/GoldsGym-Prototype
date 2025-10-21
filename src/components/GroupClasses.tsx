@@ -2,7 +2,7 @@ import React from "react";
 
 type ClassSchedule = {
   day: string;
-  time: string; // Ejemplo: "6:00 PM - 7:00 PM"
+  time: string;
   className: string;
   instructor: string;
 };
@@ -71,7 +71,7 @@ const getClassForSlot = (day: string, time: string) => {
     if (c.day !== day) return false;
     const [start] = c.time.split(" - ");
     const startHour = parseHour(start);
-    return Math.abs(startHour - slotHour) < 1; // dentro de la hora
+    return Math.abs(startHour - slotHour) < 1; 
   });
 };
 
