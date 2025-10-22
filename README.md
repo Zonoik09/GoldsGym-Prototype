@@ -78,4 +78,4 @@ npm run dev
 
 * [Jonathan Rueda Neiro](https://github.com/Zonoik09)
 
-* Izan Ferreiro Raya
+* [Izan Ferreiro Raya](https://github.com/Kazzahiro)
