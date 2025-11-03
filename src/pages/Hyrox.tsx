@@ -1,20 +1,20 @@
 import { useParams } from "react-router-dom";
 import Header from "@/components/Header1";
-import LocationHero from "@/components/LocationHero";
-import TestimonyComp from "@/components/Testimony";
+import HyroxComp from "@/components/Hyrox";
 import Footer from "@/components/Footer";
 
-const Testimony = () => {
+const Hyrox = () => {
   const { location } = useParams<{ location: string }>();
   const locationId = location || "northgate";
   
   return (
     <main className="min-h-screen">
       <Header />
-      <TestimonyComp/>
+      <HyroxComp />
       <Footer />
     </main>
   );
 };
 
-export default Testimony;
+export default Hyrox;
+ 

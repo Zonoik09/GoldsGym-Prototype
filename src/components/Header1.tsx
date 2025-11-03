@@ -12,6 +12,7 @@ const locations = [
   { name: "Tour", path: "/tour" },
   { name: "Services", path: "/services" },
   { name: "Testimony", path: "/testimony" },
+  { name: "Hyrox", path: "/hyrox" },
 ];
 
 interface HeaderProps {

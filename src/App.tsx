@@ -13,6 +13,7 @@ import BuffaloRun from "./pages/buffalo-run";
 import VillageSquare from "./pages/village-square";
 import PlansMemberships from "./pages/plans-memberships";
 import PersonalTraining from "./pages/personal-training";
+import Hyrox from "./pages/Hyrox";
 import Payment from "./pages/payment";
 import Classes from "./pages/classes";
 import Tour from "./pages/tour";
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/:location/tour" element={<Tour />} />
             <Route path="/:location/services" element={<Services />} />
             <Route path="/:location/testimony" element={<Testimony />} />
+            <Route path="/:location/hyrox" element={<Hyrox/>} />
             <Route path="/payment-plans" element={<Payment />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

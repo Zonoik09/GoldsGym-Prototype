@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Header from "@/components/Header1";
-import LocationHero from "@/components/LocationHero";
+import Service from "@/components/services";
 import Footer from "@/components/Footer";
 
 const Services = () => {
@@ -10,7 +10,7 @@ const Services = () => {
   return (
     <main className="min-h-screen">
       <Header />
-      <LocationHero locationId={locationId} />
+      <Service/>
       <Footer />
     </main>
   );
