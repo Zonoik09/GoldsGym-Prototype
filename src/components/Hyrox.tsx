@@ -52,40 +52,6 @@ const Hyrox: React.FC = () => {
 
 {/* CUADROS DE PROGRAMAS EN COLUMNA */}
 <div className="flex flex-col gap-12 mt-20 scale-90">
-  {/* Primer cuadro */}
-  <div className="bg-black/40 border border-gold rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10 shadow-xl">
-    <div className="text-center md:text-left md:w-1/2 space-y-6">
-      <h3 className="text-4xl font-bold text-white mb-2">
-        HYROX Classes and Programming
-      </h3>
-
-      <p className="text-gold text-5xl font-extrabold tracking-wide text-center mb-6">
-        PLATINUM HYROX
-      </p>
-
-      <p className="text-ivory text-lg mb-4">What you get:</p>
-      <ul className="text-ivory mb-8 space-y-3 text-xl">
-        <li>• Unlimited Access to HYROX Classes</li>
-        <li>• HYROX Programs to Follow</li>
-        <li>• Strategies on performing in a HYROX competition</li>
-      </ul>
-
-      <div className="flex justify-center">
-        <button className="bg-gold text-primary py-3 px-10 rounded-full font-bold text-xl hover:bg-gold/80 transition">
-          Let's HYROX
-        </button>
-      </div>
-    </div>
-
-    <div className="md:w-1/2">
-      <img
-        src={hyrox1Image}
-        alt="HYROX Classes"
-        className="w-full h-auto object-cover rounded-xl shadow-lg"
-      />
-    </div>
-  </div>
-
   {/* Segundo cuadro */}
   <div className="bg-black/40 border border-gold rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10 shadow-xl">
     <div className="md:w-1/2">
