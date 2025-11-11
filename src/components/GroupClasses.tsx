@@ -205,10 +205,7 @@ const GroupClasses: React.FC<GroupClassesProps> = ({ locationId }) => {
             <div className="md:w-1/2 relative rounded-xl overflow-hidden">
               <video
                 src={classVideo}
-                autoPlay
-                loop
-                muted
-                playsInline
+                controls
                 className="w-full h-full object-cover rounded-xl"
               />
             </div>

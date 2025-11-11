@@ -1,10 +1,5 @@
 import React from "react";
 import backgroundVideo from "@/assets/Legacy Video with Locations.mp4";
-import buffaloRunTour from "@/assets/BuffaloRun tour.mp4";
-import douglasdaleTour from "@/assets/Douglasdale tour.mp4";
-import countryHillsTour from "@/assets/Golds Gym Country Hills Walk Through Tour.mp4";
-import northgateTour from "@/assets/Golds Gym Northgate Walk Through Tour.mp4";
-import villageSquareTour from "@/assets/villageSquare.mp4";
 
 interface TourProps {
   locationId: string;
@@ -12,16 +7,7 @@ interface TourProps {
 
 const Tour: React.FC<TourProps> = ({ locationId }) => {
   const locationKey = locationId.toLowerCase().replace(/\s+/g, "");
-
-  const videos: Record<string, string> = {
-    "buffalo-run": buffaloRunTour,
-    douglasdale: douglasdaleTour,
-    countryhills: countryHillsTour,
-    northgate: northgateTour,
-    "village-square": villageSquareTour,
-  };
-
-  const videoSrc = videos[locationKey] || backgroundVideo;
+  const videoSrc = backgroundVideo;
 
 
   // Tours virtuales

@@ -82,15 +82,9 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
             <div className="md:w-1/2 relative rounded-xl overflow-hidden">
               <video
                 src={trainerVideo}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover opacity-90"
+                controls
+                className="w-full h-full object-cover rounded-xl"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <Play className="text-gold w-14 h-14 opacity-80" />
-              </div>
             </div>
           </div>
 
@@ -151,11 +145,8 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
             <div className="md:w-1/2 relative rounded-xl overflow-hidden">
               <video
                 src={trainerVideo}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
+                controls
+                className="w-full h-full object-cover rounded-xl"
               />
             </div>
           </div>
