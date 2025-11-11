@@ -12,7 +12,7 @@ const MembershipPlans = () => {
 
   const plans = [
     {
-      name: "GOLDS SUBSCRIPTION",
+      name: "GOLD SUBSCRIPTION",
       color: "text-gold",
       border: "border-gold",
       video: goldVideo,
@@ -25,7 +25,7 @@ const MembershipPlans = () => {
       ],
     },
     {
-      name: "PLATINUM",
+      name: "PLATINUM SUBSCRIPTION",
       color: "text-gray-300",
       border: "border-gray-400",
       video: platinumVideo,
@@ -39,7 +39,7 @@ const MembershipPlans = () => {
       ],
     },
     {
-      name: "DIAMOND",
+      name: "DIAMOND SUBSCRIPTION",
       color: "text-blue-300",
       border: "border-blue-400",
       video: diamondVideo,
