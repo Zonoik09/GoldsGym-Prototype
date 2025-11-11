@@ -18,13 +18,6 @@ interface Trainer {
 const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ locationId }) => {
   const [selectedTrainer, setSelectedTrainer] = useState<Trainer | null>(null);
   const [showConsultationForm, setShowConsultationForm] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    location: locationId,
-  });
 
   const trainers = [
     { name: "ALEX RIVERA", img: trainer1 },
@@ -36,18 +29,6 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
   const closeTrainerModal = () => setSelectedTrainer(null);
   const closeConsultation = () => setShowConsultationForm(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Aquí puedes enviar los datos a tu backend o API
-    setShowConsultationForm(false);
-  };
-
   return (
     <>
       <section className="relative min-h-screen w-full bg-primary text-white pt-24 pb-16 overflow-hidden">
@@ -57,12 +38,6 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
             <h2 className="font-serif text-5xl font-bold text-gold mb-6">
               Personal Training
             </h2>
-
-            <button
-              onClick={() => setShowConsultationForm(true)}
-              className="bg-black/50 border border-gold rounded-full px-8 py-4 hover:bg-gold hover:text-primary transition-all font-semibold text-lg">
-              Free Consultation
-            </button>
           </div>
 
           {/* WHY HIRE A PERSONAL TRAINER */}
@@ -153,82 +128,6 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
         </div>
       )}
 
-      {/* FREE CONSULTATION FORM MODAL */}
-      {showConsultationForm && (
-        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-[100] p-4">
-          <button
-            onClick={closeConsultation}
-            className="absolute top-6 right-6 text-white hover:text-gold transition"
-          >
-            <X className="w-8 h-8" />
-          </button>
-
-          <form
-            onSubmit={handleSubmit}
-            className="bg-black/70 border border-gold rounded-2xl p-10 w-full max-w-lg space-y-6"
-          >
-            <h3 className="text-3xl font-bold text-gold text-center mb-4">
-              Free Consultation
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="First Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="bg-black/40 border border-gold rounded-lg p-3 text-white placeholder:text-ivory/60"
-              />
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-                className="bg-black/40 border border-gold rounded-lg p-3 text-white placeholder:text-ivory/60"
-              />
-            </div>
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="bg-black/40 border border-gold rounded-lg p-3 w-full text-white placeholder:text-ivory/60"
-            />
-
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="bg-black/40 border border-gold rounded-lg p-3 w-full text-white placeholder:text-ivory/60"
-            />
-
-            <input
-              type="text"
-              name="location"
-              value={formData.location}
-              readOnly
-              className="bg-black/40 border border-gold rounded-lg p-3 w-full text-white opacity-70"
-            />
-
-            <button
-              type="submit"
-              className="bg-gold text-primary font-bold py-3 px-8 rounded-full hover:bg-gold/80 w-full transition-all"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-      )}
     </>
   );
 };
