@@ -10,8 +10,13 @@ interface PersonalTrainingPackagesProps {
   locationId: string;
 }
 
+interface Trainer {
+  name: string;
+  img: string;
+}
+
 const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ locationId }) => {
-  const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
+  const [selectedTrainer, setSelectedTrainer] = useState<Trainer | null>(null);
   const [showConsultationForm, setShowConsultationForm] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -21,13 +26,6 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
     location: locationId,
   });
 
-  const packages = [
-    { sessions: 12, price: 800 },
-    { sessions: 24, price: 1600 },
-    { sessions: 36, price: 2400 },
-    { sessions: 40, price: 2667 },
-  ];
-
   const trainers = [
     { name: "ALEX RIVERA", img: trainer1 },
     { name: "MIA TORRES", img: trainer2 },
@@ -35,8 +33,7 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
     { name: "SOFIA MARTIN", img: trainer4 },
   ];
 
-  const handlePackageClick = (sessions: number) => setSelectedPackage(String(sessions));
-  const closeModal = () => setSelectedPackage(null);
+  const closeTrainerModal = () => setSelectedTrainer(null);
   const closeConsultation = () => setShowConsultationForm(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,26 +55,14 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
           {/* HEADER */}
           <div className="text-center mb-8">
             <h2 className="font-serif text-5xl font-bold text-gold mb-6">
-              Personal Training Package
+              Personal Training
             </h2>
 
-            {/* PACKAGE BUTTONS */}
-            <div className="flex flex-wrap justify-center gap-6">
-                <button
-                  onClick={() => setShowConsultationForm(true)}
-                  className="bg-black/50 border border-gold rounded-full px-6 py-3 hover:bg-gold hover:text-primary transition-all font-semibold">
-                Free Consultation
-              </button>
-              {packages.map((pkg) => (
-                <button
-                  key={pkg.sessions}
-                  onClick={() => handlePackageClick(pkg.sessions)}
-                  className="bg-black/50 border border-gold rounded-full px-6 py-3 hover:bg-gold hover:text-primary transition-all font-semibold"
-                >
-                  {pkg.sessions} Sessions - ${pkg.price}
-                </button>
-              ))}
-            </div>
+            <button
+              onClick={() => setShowConsultationForm(true)}
+              className="bg-black/50 border border-gold rounded-full px-8 py-4 hover:bg-gold hover:text-primary transition-all font-semibold text-lg">
+              Free Consultation
+            </button>
           </div>
 
           {/* WHY HIRE A PERSONAL TRAINER */}
@@ -118,7 +103,8 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
               {trainers.map((t) => (
                 <div
                   key={t.name}
-                  className="flex flex-col items-center text-center bg-black/40 border border-gold rounded-2xl p-4 hover:bg-black/60 transition-all"
+                  onClick={() => setSelectedTrainer(t)}
+                  className="flex flex-col items-center text-center bg-black/40 border border-gold rounded-2xl p-4 hover:bg-black/60 transition-all cursor-pointer"
                 >
                   <img
                     src={t.img}
@@ -133,42 +119,44 @@ const PersonalTrainingPackages: React.FC<PersonalTrainingPackagesProps> = ({ loc
         </div>
       </section>
 
-      {/* MODAL FOR SESSION OPTIONS */}
-      {selectedPackage && (
+      {/* MODAL FOR TRAINER DETAILS */}
+      {selectedTrainer && (
         <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-[100] p-4">
           <button
-            onClick={closeModal}
+            onClick={closeTrainerModal}
             className="absolute top-6 right-6 text-white hover:text-gold transition"
           >
             <X className="w-8 h-8" />
           </button>
 
-          <div className="bg-black/70 border border-gold rounded-2xl p-10 w-full max-w-3xl text-center">
-            <h3 className="text-3xl font-bold text-gold mb-6">
-              {selectedPackage} Sessions
-            </h3>
+          <div className="bg-black/70 border border-gold rounded-2xl p-10 w-full max-w-5xl flex flex-col md:flex-row gap-8 items-center">
+            <div className="md:w-1/2 text-center md:text-left">
+              <h3 className="text-4xl font-bold text-gold mb-4">
+                {selectedTrainer.name}
+              </h3>
+              <p className="text-ivory text-lg mb-6">
+                Expert personal trainer ready to help you achieve your fitness goals.
+              </p>
+              <button 
+                onClick={() => {
+                  closeTrainerModal();
+                  setShowConsultationForm(true);
+                }}
+                className="bg-gold text-primary font-bold py-3 px-8 rounded-full hover:bg-gold/80 transition"
+              >
+                Book Consultation
+              </button>
+            </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {[{ times: 1, factor: 1 }, { times: 2, factor: 1.2 }, { times: 3, factor: 1.4 }].map(
-                (opt) => (
-                  <div
-                    key={opt.times}
-                    className="bg-black/50 border border-gold rounded-2xl p-6 hover:bg-black/70 transition-all"
-                  >
-                    <h4 className="text-2xl font-bold text-gold mb-2">{opt.times}x / Week</h4>
-                    <p className="text-ivory text-xl mb-4 font-semibold">
-                      $
-                      {(
-                        (packages.find((p) => p.sessions === Number(selectedPackage))?.price || 0) *
-                        opt.factor
-                      ).toFixed(0)}
-                    </p>
-                    <button className="bg-gold text-primary font-bold py-2 px-6 rounded-full hover:bg-gold/80 transition">
-                      Hire Now
-                    </button>
-                  </div>
-                )
-              )}
+            <div className="md:w-1/2 relative rounded-xl overflow-hidden">
+              <video
+                src={trainerVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classVideo from "@/assets/Legacy Video with Locations.mp4";
 
 type ClassSchedule = {
   day: string;
@@ -166,37 +167,51 @@ const GroupClasses: React.FC<GroupClassesProps> = ({ locationId }) => {
       {/* Modal Detalle de Clase */}
       {selectedClass && (
         <div
-          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50"
           onClick={() => setSelectedClass(null)}
         >
           <div
-            className="bg-primary border border-gold/40 rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl relative"
+            className="bg-primary border border-gold/40 rounded-2xl p-8 max-w-5xl w-full mx-4 shadow-2xl relative flex flex-col md:flex-row gap-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedClass(null)}
-              className="absolute top-3 right-4 text-gold text-2xl font-bold hover:text-ivory"
+              className="absolute top-3 right-4 text-gold text-2xl font-bold hover:text-ivory z-10"
             >
               ×
             </button>
-            <h3 className="text-3xl font-bold text-gold mb-3">{selectedClass.className}</h3>
-            <p className="text-lg text-ivory mb-1">
-              <span className="font-semibold text-gold">Day:</span>{" "}
-              {dayNames[selectedClass.day] || selectedClass.day}
-            </p>
-            <p className="text-lg text-ivory mb-1">
-              <span className="font-semibold text-gold">Time:</span> {selectedClass.time}
-            </p>
-            <p className="text-lg text-ivory mb-6">
-              <span className="font-semibold text-gold">Instructor:</span> {selectedClass.instructor}
-            </p>
 
-            <button
-              onClick={() => setSelectedClass(null)}
-              className="bg-gold text-black font-bold px-6 py-2 rounded-xl hover:bg-gold/80 transition"
-            >
-              Close
-            </button>
+            <div className="md:w-1/2 flex flex-col justify-center">
+              <h3 className="text-3xl font-bold text-gold mb-4">{selectedClass.className}</h3>
+              <p className="text-lg text-ivory mb-2">
+                <span className="font-semibold text-gold">Day:</span>{" "}
+                {dayNames[selectedClass.day] || selectedClass.day}
+              </p>
+              <p className="text-lg text-ivory mb-2">
+                <span className="font-semibold text-gold">Time:</span> {selectedClass.time}
+              </p>
+              <p className="text-lg text-ivory mb-6">
+                <span className="font-semibold text-gold">Instructor:</span> {selectedClass.instructor}
+              </p>
+
+              <button
+                onClick={() => setSelectedClass(null)}
+                className="bg-gold text-black font-bold px-6 py-3 rounded-xl hover:bg-gold/80 transition"
+              >
+                Close
+              </button>
+            </div>
+
+            <div className="md:w-1/2 relative rounded-xl overflow-hidden">
+              <video
+                src={classVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
           </div>
         </div>
       )}
