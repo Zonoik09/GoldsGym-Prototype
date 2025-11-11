@@ -1,10 +1,10 @@
 import React from "react";
 import backgroundVideo from "@/assets/Legacy Video with Locations.mp4";
-import buffaloRunTour from "@/assets/BuffaloRun tour.mp4";
-import douglasdaleTour from "@/assets/Douglasdale tour.mp4";
-import countryHillsTour from "@/assets/Golds Gym Country Hills Walk Through Tour.mp4";
-import northgateTour from "@/assets/Golds Gym Northgate Walk Through Tour.mp4";
-import villageSquareTour from "@/assets/villageSquare.mp4";
+import buffaloRunTour from "@/assets/Legacy Video with Locations.mp4";
+import douglasdaleTour from "@/assets/Legacy Video with Locations.mp4";
+import countryHillsTour from "@/assets/Legacy Video with Locations.mp4";
+import northgateTour from "@/assets/Legacy Video with Locations.mp4";
+import villageSquareTour from "@/assets/Legacy Video with Locations.mp4";
 
 interface TourProps {
   locationId: string;
